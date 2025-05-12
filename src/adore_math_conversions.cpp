@@ -68,6 +68,19 @@ to_ros_msg( const Polygon2d& polygon )
   return msg;
 }
 
+std::vector<Point2d>
+to_cpp_type( const std::vector<adore_ros2_msgs::msg::Point2d>& msg )
+{
+  std::vector<Point2d> points;
+  points.reserve( msg.size() );
+
+  for( const auto& ros_point : msg )
+  {
+    points.push_back( to_cpp_type( ros_point ) );
+  }
+  return points;
+}
+
 } // namespace conversions
 } // namespace math
 } // namespace adore
