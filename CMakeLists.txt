@@ -8,12 +8,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Dependencies
 find_package(ament_cmake REQUIRED)
-find_package(Eigen3 REQUIRED)
-find_package(osqp REQUIRED)
-find_package(OsqpEigen REQUIRED)
-find_package(OpenDrive REQUIRED)
 find_package(adore_math REQUIRED)
-find_package(adore_dynamics REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(adore_ros2_msgs REQUIRED)
 find_package(std_msgs REQUIRED)
@@ -37,12 +32,7 @@ target_include_directories(${PROJECT_NAME}
 
 # Link and export ROS 2 & vendor dependencies
 ament_target_dependencies(${PROJECT_NAME}
-  Eigen3
-  osqp
-  OsqpEigen
-  OpenDrive
   adore_math
-  adore_dynamics
   adore_ros2_msgs
   rclcpp
   std_msgs
@@ -75,8 +65,7 @@ install(EXPORT export_${PROJECT_NAME}
 # ament package exports
 ament_export_include_directories(include)
 ament_export_dependencies(
-  Eigen3 osqp OsqpEigen OpenDrive
-  adore_math adore_dynamics adore_ros2_msgs
+  adore_math adore_ros2_msgs
   rclcpp std_msgs tf2 tf2_ros tf2_geometry_msgs geometry_msgs
 )
 ament_export_targets(export_${PROJECT_NAME})
