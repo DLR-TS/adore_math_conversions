@@ -32,7 +32,6 @@ Polygon2d to_cpp_type( const adore_ros2_msgs::msg::Polygon2d& msg );
 
 adore_ros2_msgs::msg::Polygon2d to_ros_msg( const Polygon2d& msg );
 
-std::vector<Point2d> to_cpp_type( const std::vector<adore_ros2_msgs::msg::Point2d>& msg );
 
 } // namespace conversions
 } // namespace math
